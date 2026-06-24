@@ -1,0 +1,23 @@
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Credenciales y tokens (Google OAuth, APIs, etc.)
+credentials.json
+token.json
+**/credentials.json
+**/token.json
+*secret*.json
+
+# Configuración local de Claude Code
+.claude/
+
+# Entorno virtual de Python
+venv/
+.venv/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.egg-info/
