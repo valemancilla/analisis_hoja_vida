@@ -6,7 +6,7 @@ from prompts.cv_prompts import crear_sistema_prompts
 def crear_evaluador_cv():
     modelo_base = ChatOpenAI(
         model="gpt-4o-mini",
-        temperature=0.2
+        temperature=0  # 0 = determinista: el mismo CV produce siempre el mismo resultado
     )
 
     modelo_estructurado = modelo_base.with_structured_output(AnalisisCV)

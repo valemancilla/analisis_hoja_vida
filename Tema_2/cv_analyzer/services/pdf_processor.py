@@ -4,6 +4,9 @@ from io import BytesIO
 
 def extraer_texto_pdf(archivo_pdf):
     try:
+        # Reinicia el puntero al inicio para que cada re-análisis lea el PDF completo
+        # (si no, una segunda lectura del mismo archivo devolvería bytes vacíos).
+        archivo_pdf.seek(0)
         pdf_reader = PyPDF2.PdfReader(BytesIO(archivo_pdf.read()))
         texto_completo = ""
 
