@@ -156,6 +156,6 @@ analisis_hoja_vida/
 
 ## 👥 Autores
 
-- **valemancilla** — [valem2958@gmail.com](mailto:valem2958@gmail.com)
+- **valentina mancilla** 
 
-> Proyecto desarrollado para el curso **Inteligencia Artificial 2**.
+
