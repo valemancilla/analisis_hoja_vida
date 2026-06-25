@@ -34,7 +34,9 @@ ANALISIS_PROMPT = HumanMessagePromptTemplate.from_template(
 
 **INSTRUCCIONES ESPECÍFICAS:**
 1. Extrae información clave del candidato (nombre, experiencia, educación)
-2. Identifica habilidades técnicas relevantes para este puesto específico
+2. Identifica las 5-7 habilidades técnicas CLAVE que exige el puesto y, para cada una,
+   indica si el candidato la posee (presente=true) o NO la tiene (presente=false),
+   basándote únicamente en lo que aparece en el CV
 3. Evalúa la experiencia laboral en relación a los requisitos
 4. Determina fortalezas principales del candidato
 5. Identifica áreas de mejora o desarrollo necesarias

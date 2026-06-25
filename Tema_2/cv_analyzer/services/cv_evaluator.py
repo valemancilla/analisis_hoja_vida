@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from models.cv_model import AnalisisCV
+from models.cv_model import AnalisisCV, HabilidadClave
 from prompts.cv_prompts import crear_sistema_prompts
 
 
@@ -32,7 +32,7 @@ def evaluar_candidato(texto_cv: str, descripcion_puesto: str) -> AnalisisCV:
         return AnalisisCV(
             nombre_candidato="Error en procesamiento.",
             experiencia_años=0,
-            habilidades_clave=["Error al procesar CV"],
+            habilidades_clave=[HabilidadClave(nombre="Error al procesar CV", presente=False)],
             education="No se puede determinar.",
             experiencia_relevante="Error durante el análisis.",
             fortalezas=["Requiere revisión manual del CV"],

@@ -222,7 +222,10 @@ def mostrar_resultados(resultado: AnalisisCV):
         cols = st.columns(min(len(resultado.habilidades_clave), 4))
         for i, habilidad in enumerate(resultado.habilidades_clave):
             with cols[i % 4]:
-                st.success(f"✅ {habilidad}")
+                if habilidad.presente:
+                    st.success(f"✅ {habilidad.nombre}")
+                else:
+                    st.error(f"❌ {habilidad.nombre}")
     else:
         st.warning("No se identificaron habilidades técnicas específicas")
 
