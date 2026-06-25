@@ -1,0 +1,31 @@
+# Dependencias del proyecto "Análisis de Hojas de Vida con IA"
+# Instalar con:  pip install -r requirements.txt
+
+# --- Interfaz web ---
+streamlit
+
+# --- LangChain (núcleo y proveedores de LLM) ---
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-google-genai
+langchain-text-splitters
+
+# --- Validación de datos / modelos estructurados ---
+pydantic
+
+# --- Procesamiento de PDF ---
+PyPDF2
+pypdf
+
+# --- Embeddings / utilidades RAG ---
+numpy
+
+# --- Variables de entorno ---
+python-dotenv
+
+# --- Carga desde Google Drive (Tema 3, opcional) ---
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib

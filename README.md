@@ -121,36 +121,66 @@ analisis_hoja_vida/
 
 ---
 
-## ▶️ Cómo Ejecutar el Analizador de CVs
+## 📦 Requisitos Previos
 
-1. **Crear y activar el entorno virtual** (PowerShell):
+Para ejecutar el proyecto en otro computador (al clonarlo o descargarlo) necesitas:
+
+| Requisito | Detalle |
+|-----------|---------|
+| **Python 3.13** | Descargable desde [python.org](https://www.python.org/downloads/). Marca *"Add Python to PATH"* durante la instalación. |
+| **pip** | Viene incluido con Python. Verifica con `pip --version`. |
+| **Git** | Solo si vas a clonar el repositorio (`git clone`). |
+| **Clave de API de OpenAI** | Obligatoria para el analizador de CVs. Se obtiene en [platform.openai.com](https://platform.openai.com/api-keys). |
+| **Clave de API de Google (Gemini)** | Opcional, solo para los ejemplos con Gemini. |
+
+> ℹ️ Todas las **librerías de Python** necesarias están listadas en `requirements.txt` y se
+> instalan en un solo paso (ver más abajo). No necesitas instalarlas una por una.
+
+---
+
+## ▶️ Instalación y Ejecución
+
+1. **Clonar (o descargar) el repositorio:**
+   ```powershell
+   git clone <url-del-repositorio>
+   cd analisis_hoja_vida
+   ```
+
+2. **Crear y activar el entorno virtual** (PowerShell):
    ```powershell
    python -m venv venv
    .\venv\Scripts\Activate.ps1
    ```
+   > Si PowerShell bloquea la activación, ejecuta primero:
+   > `Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned`
 
-2. **Instalar dependencias:**
+3. **Instalar todas las dependencias** desde el archivo `requirements.txt`:
    ```powershell
-   pip install streamlit langchain langchain-openai langchain-community langchain-google-genai pydantic python-dotenv PyPDF2 numpy
+   pip install -r requirements.txt
    ```
 
-3. **Configurar las credenciales** en `Tema_2/cv_analyzer/.env`:
+4. **Configurar las credenciales** creando el archivo `Tema_2/cv_analyzer/.env`
+   (no se incluye en el repositorio por seguridad):
    ```env
    OPENAI_API_KEY=tu_clave_de_openai
    GOOGLE_API_KEY=tu_clave_de_google   # opcional
    ```
 
-4. **Ejecutar la aplicación:**
+5. **Ejecutar la aplicación:**
    ```powershell
    cd Tema_2\cv_analyzer
    streamlit run .\app.py
    ```
 
-5. Abrir el navegador en **http://localhost:8501**, subir un CV en PDF, escribir la
+6. Abrir el navegador en **http://localhost:8501**, subir un CV en PDF, escribir la
    descripción del puesto y pulsar **"Analizar candidato"**.
 
 > 💡 El PDF debe contener **texto seleccionable**; los PDF que son solo imágenes escaneadas
 > no permiten extraer el texto.
+
+> ⚠️ Si el navegador muestra *"localhost no ha enviado ningún dato"*, el puerto **8501** ya
+> está ocupado por otro proceso (por ejemplo, un contenedor de Docker). Usa otro puerto con
+> `streamlit run .\app.py --server.port 8502` y abre `http://localhost:8502`.
 
 ---
 
